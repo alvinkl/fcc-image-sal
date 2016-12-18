@@ -1,0 +1,77 @@
+extends layout
+
+block content
+  h1 FreeCodeCamp Image Search Abstraction Layer
+  blockquote
+    p User stories:
+    ul
+      li I can get the image URLs, alt text and page urls for a set of images relating to a given search string.
+      li I can paginate through the responses by adding a ?offset=2 parameter to the URLs
+      li I can get a list of the most recently submitted search strings.
+  h3 Example creation usage:
+  code https://cryptic-ridge-9197.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10  <br/>
+  code https://cryptic-ridge-9197.herokuapp.com/api/latest/imagesearch/
+  h3 Example creation output
+  code.
+    [
+      {
+      "url": "https://s-media-cache-ak0.pinimg.com/736x/3d/eb/a0/3deba0e817b6bac73ecc58dfe9422902.jpg",
+      "snippet": "... the funniest LoLCats we've ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqEhjFqs8e8b_5sGm7m2byTngPrEbyuGyGbG4yLSoc4Si9fw8mxvgXS72E",
+      "context": "https://www.pinterest.com/pin/249246160601850881/"
+      }, <br /> <br />
+      {
+      "url": "http://img.scoop.it/jVVFUdNhaCPVmq2BvcmrATl72eJkfbmt4t8yenImKBVvK0kTmF0xjctABnaLJIm9",
+      "snippet": "Meno*PAWS* - Lolcats 'n' Funny ...",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQk4q9SgbktahujYmNI6cBO50WQrujO-yBHg7G4KP1EKi2BMSZY0sHk810",
+      "context": "http://www.scoop.it/t/lolcats/p/3405457/2011/01/18/meno-paws-lolcats-n-funny-pictures-of-cats-i-can-has-cheezburger"
+      }, <br /> <br />
+      {
+      "url": "https://momentofzen.in/wp-content/uploads/2010/08/lolcat-funny-picture-moderator1.jpg",
+      "snippet": "lolcat-funny-picture- ...",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSly4P_8NJmjHOGZGVetmT2Zv07JqigsieKo2z7xPB-ntfpwnb1uCFj6PE",
+      "context": "https://www.momentofzen.in/2010/08/08/funneh-pickchaaaz/"
+      }, <br /> <br />
+      {
+      "url": "http://cutepersiancat.xyz/wp-content/uploads/2016/08/likeable-lol-cats-in-addition-to-lolcats-funny-cat-pictures.jpg",
+      "snippet": "... Lolcats Funny Cat Pictures",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwFHM6VlQRiGY3GhkfUVi9wmS0M5yYTY5eJpgxDpwouSub9g6OFNurkA",
+      "context": "http://cutepersiancat.xyz/cool-lol-cats/likeable-lol-cats-in-addition-to-lolcats-funny-cat-pictures/"
+      }, <br /> <br />
+      {
+      "url": "http://img.scoop.it/nCDfJ08MpKhEdCcEztDllTl72eJkfbmt4t8yenImKBVvK0kTmF0xjctABnaLJIm9",
+      "snippet": "Lolcats - Funny Pictures of ...",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSw9_jVXrQFer2E2yp2oqw4JdeWF89zGgUvj-9lez5sEzTR-SMFxtKR5w",
+      "context": "http://www.scoop.it/t/crazy-cats/p/1661402930/2012/04/25/lolcats-trust-me-lolcats-funny-pictures-of-cats-i-can-has"
+      }, <br /> <br />
+      {
+      "url": "http://data.whicdn.com/images/28614985/original.jpg",
+      "snippet": "Lolcats - Funny Pictures of ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ6dpfl378CcSGGvqS-MmPa91qcMfB31WYmW_1ARakW5jQ7-jUhTCvWuYo",
+      "context": "http://weheartit.com/entry/group/15377825"
+      }, <br /> <br />
+      {
+      "url": "http://cutepersiancat.xyz/wp-content/uploads/2016/08/awesome-lol-cats-along-with-lolcats-page-2-funny-cat-pictures.jpg",
+      "snippet": "... With Lolcats Page 2 Funny ...",
+      "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQcxGy_hL6L291y0Qc2w84d_T_MWphIauljYQWUkxREF0D116l_7Qx5cw",
+      "context": "http://cutepersiancat.xyz/cool-lol-cats/awesome-lol-cats-along-with-lolcats-page-2-funny-cat-pictures/"
+      }, <br /> <br />
+      {
+      "url": "https://i.ytimg.com/vi/8nOsEEBrEuA/hqdefault.jpg",
+      "snippet": "LOLCats in All Fired Up lol ...",
+      "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQuWNpmeNmLlMNc0v32tK83j4eOrOPVS6M2kty-CVFzQTvbS9d9WdKfrg7E",
+      "context": "https://www.youtube.com/watch?v=8nOsEEBrEuA"
+      }, <br /> <br />
+      {
+      "url": "http://cutepersiancat.xyz/wp-content/uploads/2016/08/magnificent-lol-cats-and-also-lolcats-funny-cat-pictures.jpg",
+      "snippet": "... Lolcats Funny Cat Pictures",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT14uoxBALX2_k5nxQgpjBKIv2fDDjTdvV1uyXeSoDmq9WDH3ujXPEDDRLn",
+      "context": "http://cutepersiancat.xyz/cool-lol-cats/magnificent-lol-cats-and-also-lolcats-funny-cat-pictures/"
+      }, <br /> <br />
+      {
+      "url": "http://cdn.playbuzz.com/cdn/d68ef92c-3973-4b00-98c9-913e423d83ff/f9ec20e0-bb55-48b1-8789-bb51947e4d12.jpg",
+      "snippet": "Whats a Summary of Your life?",
+      "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRWWY7kdyrsQXsyW8fqoVs6_I-RwRm1BFpduC6imCrnbsbuT0Q5pmqrHrg",
+      "context": "http://www.playbuzz.com/mikeyh10/whats-a-summary-of-your-life"
+      }
+    ]
