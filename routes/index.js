@@ -21,11 +21,7 @@ router.get('/latest', (req, res, next) => {
   })
 });
 
-router.get('/favicon.ico', function(req, res) {
-    res.render('index');
-});
-
-router.get('/:query', (req, res, next) => {
+router.get('/imagesearch/:query', (req, res, next) => {
 
   var q = req.params.query;
   var offset = (isNaN(req.query.offset))? 10 : req.query.offset;
